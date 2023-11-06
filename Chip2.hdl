@@ -1,0 +1,11 @@
+CHIP Chip2
+{
+	IN x, y, z;
+	
+	OUT out;
+	
+	PARTS:
+	Not(in = y, out = ny);
+	And(a = x, b = ny, out = xAndny);
+	And(a = xAndny, b = z, out = out);
+}

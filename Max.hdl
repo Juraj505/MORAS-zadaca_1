@@ -1,0 +1,10 @@
+CHIP Max
+{
+	IN a[16], b[16];
+	
+	OUT out[16];
+	
+	PARTS:
+	Less(a = a, b = b, out = isAlessB);
+	Mux16(a = a, b = b, sel = isAlessB, out = out);
+}

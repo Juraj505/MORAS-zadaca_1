@@ -1,0 +1,73 @@
+CHIP NumBlocks {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Register(in[0] = true, in[1..15] = false, load = true, out = out0);
+	
+	Xor(a = in[0], b = in[1], out = cmp1);
+	Inc16(in = out0, out = incout0);
+	Mux16(a = out0, b = incout0, sel = cmp1, out = out1);
+	
+	Xor(a = in[1], b = in[2], out = cmp2);
+	Inc16(in = out1, out = incout1);
+	Mux16(a = out1, b = incout1, sel = cmp2, out = out2);
+	
+	Xor(a = in[2], b = in[3], out = cmp3);
+	Inc16(in = out2, out = incout2);
+	Mux16(a = out2, b = incout2, sel = cmp3, out = out3);	
+	
+	Xor(a = in[3], b = in[4], out = cmp4);
+	Inc16(in = out3, out = incout3);
+	Mux16(a = out3, b = incout3, sel = cmp4, out = out4);
+	
+	Xor(a = in[4], b = in[5], out = cmp5);
+	Inc16(in = out4, out = incout4);
+	Mux16(a = out4, b = incout4, sel = cmp5, out = out5);
+	
+	Xor(a = in[5], b = in[6], out = cmp6);
+	Inc16(in = out5, out = incout5);
+	Mux16(a = out5, b = incout5, sel = cmp6, out = out6);
+	
+	Xor(a = in[6], b = in[7], out = cmp7);
+	Inc16(in = out6, out = incout6);
+	Mux16(a = out6, b = incout6, sel = cmp7, out = out7);
+	
+	Xor(a = in[7], b = in[8], out = cmp8);
+	Inc16(in = out7, out = incout7);
+	Mux16(a = out7, b = incout7, sel = cmp8, out = out8);
+	
+	Xor(a = in[8], b = in[9], out = cmp9);
+	Inc16(in = out8, out = incout8);
+	Mux16(a = out8, b = incout8, sel = cmp9, out = out9);
+	
+	Xor(a = in[9], b = in[10], out = cmp10);
+	Inc16(in = out9, out = incout9);
+	Mux16(a = out9, b = incout9, sel = cmp1, out = out10);
+	
+	Xor(a = in[10], b = in[11], out = cmp11);
+	Inc16(in = out10, out = incout10);
+	Mux16(a = out10, b = incout10, sel = cmp11, out = out11);
+	
+	Xor(a = in[11], b = in[12], out = cmp12);
+	Inc16(in = out11, out = incout11);
+	Mux16(a = out11, b = incout11, sel = cmp12, out = out12);
+	
+	Xor(a = in[12], b = in[13], out = cmp13);
+	Inc16(in = out12, out = incout12);
+	Mux16(a = out12, b = incout12, sel = cmp13, out = out13);
+	
+	Xor(a = in[13], b = in[14], out = cmp14);
+	Inc16(in = out13, out = incout13);
+	Mux16(a = out13, b = incout13, sel = cmp14, out = out14);
+	
+	Xor(a = in[14], b = in[15], out = cmp15);
+	Inc16(in = out14, out = incout14);
+	Mux16(a = out14, b = incout14, sel = cmp15, out = out);
+	
+	
+	
+	
+
+
+}

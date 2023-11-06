@@ -1,0 +1,14 @@
+CHIP Less {
+    IN a[16], b[16];
+    OUT out;
+     
+	//Oduzimanje pomocu dvojnog komplementa 
+    PARTS:
+	Not16(in = b, out = notb);
+	Inc16(in = notb, out = negb);
+	Add16(a = a, b = negb, out[15] = msb, out[0..14] = drop);
+	
+	Mux(a = false, b = true, sel = msb, out = out);
+	
+  
+}
